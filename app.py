@@ -50,6 +50,7 @@ def get_task(id):
     for t in tasks: # t é cada atividade em tasks
         if t.id == id:
             return jsonify(t.to_dict())
+            break
             
         return jsonify({'message': 'Tarefa não encontrada'}), 404    
 
@@ -63,6 +64,7 @@ def update_task(id):
         # Verifica se o ID da tarefa corresponde ao ID fornecido
         if t.id == id:
             task = t
+            break
 
     # Se a tarefa não for encontrada
     if task == None: 
@@ -88,6 +90,7 @@ def delete_task(id):
     for t in tasks: # t é cada atividade em tasks
         if t.id == id:
             task = t
+            break
 
     # Se a tarefa não for encontrada
     if task == None:
